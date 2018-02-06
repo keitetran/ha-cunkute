@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./server.js",
-    "run": "gulp",
-    "build": "gulp build"
+    "gulp": "gulp",
+    "build": "gulp build",
+    "gulp build": "gulp"
   },
   "repository": {
     "type": "git",

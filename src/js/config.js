@@ -19,8 +19,8 @@ var config = (function () {
     },
     passphrase: "7IeZlmfz123",
     weather_code: 1117099,
-    //hass_server: 'myhome.local',
-    hass_server: 'localhost',
+    hass_server: 'myhome.local',
+    //hass_server: 'localhost',
     hass_port: '8123',
     const: {
       on: "on",

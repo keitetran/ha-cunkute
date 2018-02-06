@@ -1,0 +1,47 @@
+<!-- Barthroom control modal -->
+<div class="modal fade2 deviceDetailModal" tabindex="-1" role="dialog" aria-labelledby="deviceDetailModal" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="col dt-text">Nhà tắm</div>
+			</div>
+			<div class="modal-body pt-0">
+				<div class="row">
+					<div class="col-6 pt-2 pb-3 border-right-1 bathroomSensorControl">
+						<label>Cảm biến:</label>
+						<div class="row">
+							<div class="col-6 text-center">
+								<img width="25px" src="assets/svg/motion-sensor.svg">
+							</div>
+							<div class="col-6 text-center">
+								<label class="chk-toggle">
+									<input class="chk-input" type="checkbox" data-device="bathroom_light" data-field="sensor_status">
+									<span class="chk-round"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 pt-2 bathroomLightControl2">
+						<label>Đèn:</label>
+						<div class="row">
+							<div class="col-6 text-center">
+								<img width="25px" src="assets/svg/light.svg">
+							</div>
+							<div class="col-6 text-center">
+								<label class="chk-toggle">
+									<input class="chk-input" type="checkbox" data-device="bathroom_light" data-field="status">
+									<span class="chk-round"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="col-12">
+					<button class="btn btn-block btn-lg btn-primary" data-dismiss="modal">Hoàn tất cài đặt</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,75 @@
+<!-- Tolet control modal -->
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<div class="col dt-text">Nhà vệ sinh</div>
+		</div>
+		<div class="modal-body pt-0">
+			<div class="row">
+				<div class="col-6 pt-2 pb-2 border-right-1 toiletWaterControl">
+					<label>Giật nước:</label>
+					<div class="row">
+						<div class="col-6 text-center">
+							<img width="25px" src="assets/svg/toilet.svg">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="toilet" data-field="toilet_water">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 pt-2 toiletLightControl">
+					<label>Đèn:</label>
+					<div class="row">
+						<div class="col-6 text-center">
+							<img width="25px" src="assets/svg/light.svg">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="switch.toilet_light" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 pt-2 pb-3 border-top-1 border-right-1 toiletMotionSensor">
+					<label>Cảm biến:</label>
+					<div class="row">
+						<div class="col-6 text-center">
+							<img width="25px" src="assets/svg/microchip.svg">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="toilet" data-field="sensor_status">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 pt-2 border-top-1 toiletFan">
+					<label>Quạt hút mùi:</label>
+					<div class="row">
+						<div class="col-6 text-center">
+							<img width="25px" src="assets/svg/fan2.svg">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="switch.toilet_fan" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="col-12">
+				<button class="btn btn-block btn-lg btn-primary" data-dismiss="modal">Hoàn tất cài đặt</button>
+			</div>
+		</div>
+	</div>
+</div>

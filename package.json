@@ -1,0 +1,52 @@
+{
+  "name": "ha-cunkute",
+  "version": "1.0.1",
+  "description": "Home Assistant with WebSocket by Keite Tran",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "run": "gulp",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keitetran/ha-cunkute.git"
+  },
+  "author": "Tran Ngoc Anh",
+  "email": "mr.ngocanhtran.com@gmail.com",
+  "license": "MIT",
+  "homepage": "https://facebook.com/mr.ngocanhtran",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "chart.js": "^2.7.1",
+    "chartjs-plugin-annotation": "^0.5.7",
+    "crypto-js": "^3.1.9-1",
+    "feather-icons": "^4.5.0",
+    "jquery": "^3.2.1",
+    "js-cookie": "^2.2.0",
+    "popper.js": "^1.13.0",
+    "sweetalert2": "^7.8.6",
+    "toastr": "^2.1.4",
+    "weathericons": "^2.1.0",
+    "@types/jquery": "^3.3.0",
+    "autoprefixer": "^7.1.3",
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-file-include": "^1.2.0",
+    "gulp-header-comment": "^0.2.1",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-useref": "^3.1.2",
+    "run-sequence": "^2.1.0"
+  }
+}

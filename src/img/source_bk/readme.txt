@@ -1,0 +1,1 @@
+This icon not used on this folder, move it to root server.

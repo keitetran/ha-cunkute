@@ -1,0 +1,137 @@
+<!--Air conditioner control modal-->
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<div class="col dt-text">Điều hòa</div>
+			<div class="dt-icon">
+				<label class="chk-toggle">
+					<input class="chk-input" type="checkbox" data-device="air_conditioner" data-field="status">
+					<span class="chk-round"></span>
+				</label>
+			</div>
+		</div>
+		<div class="modal-body pt-0">
+			<div class="grayPanel">
+				<div class="alert alert-warning"></div>
+			</div>
+			<div class="row pt-2">
+				<div class="col-12 border-bottom-1 pb-2">
+					<div class="row no-gutters airConditionerMode">
+						<div class="col-4 pr-1">
+							<button type="button" class="btn btn-info btn-block" data-mode="1">
+								<i class="fa fa-xxxxxxx" aria-hidden="true"></i>
+								<span>Làm mát</span>
+							</button>
+						</div>
+						<div class="col-4 pr-1">
+							<button type="button" class="btn btn-info btn-block" data-mode="2">
+								<i class="fa fa-tint" aria-hidden="true"></i>
+								<span>Hút ẩm</span>
+							</button>
+						</div>
+						<div class="col-4">
+							<button type="button" class="btn btn-info btn-block" data-mode="3">
+								<i class="fa fa-fire" aria-hidden="true"></i>
+								<span>Sưởi ấm</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-4 pt-2 pb-2 border-right-1 border-bottom-1">
+					<label>Nhiệt độ:</label>
+					<div class="input-group input-group-sm">
+						<div class="input-group-prepend">
+							<button class="btn btn-secondary btnAirTempDown">
+								<i class="fa fa-arrow-down" aria-hidden="true"></i>
+							</button>
+						</div>
+						<input type="number" max="32" min="15" class="form-control text-center airTemp" value="80" disabled>
+						<div class="input-group-append">
+							<button class="btn btn-secondary btnAirTempUp">
+								<i class="fa fa-arrow-up" aria-hidden="true"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-4 pt-2 pb-2 border-right-1 border-bottom-1">
+					<label>Tốc độ gió:</label>
+					<div class="input-group input-group-sm">
+						<div class="input-group-prepend">
+							<button class="btn btn-secondary btnAirWindDown">
+								<i class="fa fa-arrow-down" aria-hidden="true"></i>
+							</button>
+						</div>
+
+						<input type="text" class="form-control text-center airWind" value="4" disabled>
+						<div class="input-group-append">
+							<button class="btn btn-secondary btnAirWindUp">
+								<i class="fa fa-arrow-up" aria-hidden="true"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-4 pt-2 pb-2 border-right-1 airConditionerSensor">
+					<label>Cảm biến:</label>
+					<div class="row">
+						<div class="col-6 col-sm-5 text-center">
+							<img width="25px" src="assets/svg/motion-sensor.svg">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="air_conditioner" data-field="sensor_status">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-4 pt-2 airConditionerSwing">
+					<label>Cánh quạt:</label>
+					<div class="row">
+						<div class="col-6 col-sm-5 text-center">
+							<img width="25px" src="assets/svg/propeller.svg">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="air_conditioner" data-field="air_swing">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-4 pt-2 pb-2 border-top-1 border-right-1 airConditionerTimeOff">
+					<label>Hẹn giờ tắt:</label>
+					<div class="row">
+						<div class="col-6 col-sm-5 text-center">
+							<input data-device="air_conditioner" data-field="schedule_off_time" value="23:30" type="time">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="air_conditioner" data-field="schedule_off">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-4 pt-2 pb-2 border-top-1 airConditionerTimeOn">
+					<label>Hẹn giờ bật:</label>
+					<div class="row">
+						<div class="col-6 col-sm-5 text-center">
+							<input data-device="air_conditioner" data-field="schedule_on_time" value="08:30" type="time">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="air_conditioner" data-field="schedule_on">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="col-12">
+				<button class="btn btn-block btn-lg btn-primary" data-dismiss="modal">Hoàn tất cài đặt</button>
+			</div>
+		</div>
+	</div>
+</div>

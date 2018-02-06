@@ -1,0 +1,91 @@
+<!-- Main light control modal -->
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<div class="col dt-text">Đèn phòng chính</div>
+			<div class="dt-icon">
+				<label class="chk-toggle">
+					<input class="chk-input" type="checkbox" data-device="switch.main_light_power" data-field="state">
+					<span class="chk-round"></span>
+				</label>
+			</div>
+		</div>
+		<div class="modal-body pt-0">
+			<div class="grayPanel" style="height: 49%;">
+				<div class="alert alert-warning"></div>
+			</div>
+			<div class="row pd-0 mg-0">
+				<div class="col-6 col-sm-3 pt-2 pb-2 border-right-1 mainLightMotionSensor">
+					<label>Độ sáng:</label>
+					<div class="row">
+						<div class="col-3 text-center">
+							<img width="25px" src="assets/svg/brightness-max.svg">
+						</div>
+						<div class="col-9 text-center">
+							<div class="input-group input-group-sm">
+								<div class="input-group-prepend">
+									<button class="btn btn-secondary btnLightBrightness Down" data-device="input_boolean.system_sleep_mode" data-field="state">
+										<i class="fa fa-arrow-down" aria-hidden="true"></i>
+									</button>
+								</div>
+								<input type="text" class="form-control text-center lightBrightness" value="20%" disabled>
+								<div class="input-group-append">
+									<button class="btn btn-secondary btnLightBrightness Up">
+										<i class="fa fa-arrow-up" aria-hidden="true"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 pt-2 mainLightSleepMode">
+					<label class="pb-1">Chế độ đèn ngủ:</label>
+					<div class="row">
+						<div class="col-6 col-sm-5 text-center">
+							<img width="25px" src="assets/svg/sleeping-mode.svg">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="switch.main_light_sleep" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-6  col-sm-3 pt-2 pb-2 border-top-1 border-right-1 mainLightTimeOff">
+					<label for="mainLightSetTimeOff" class="pb-1">Hẹn giờ tắt:</label>
+					<div class="row">
+						<div class="col-6 col-sm-5 text-center">
+							<input data-device="main_light" data-field="schedule_off_time" value="23:30" type="time">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="main_light" data-field="schedule_off">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-6  col-sm-3 pt-2 pb-2 border-top-1 mainLightTimeOn">
+					<label for="mainLightSetTimeOn" class="pb-1">Hẹn giờ bật:</label>
+					<div class="row">
+						<div class="col-6 col-sm-5 text-center">
+							<input data-device="main_light" data-field="schedule_on_time" value="08:30" type="time">
+						</div>
+						<div class="col-6 text-center">
+							<label class="chk-toggle float-right">
+								<input class="chk-input" type="checkbox" data-device="main_light" data-field="schedule_on">
+								<span class="chk-round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="col-12">
+				<button class="btn btn-block btn-lg btn-primary" data-dismiss="modal">Hoàn tất cài đặt</button>
+			</div>
+		</div>
+	</div>
+</div>

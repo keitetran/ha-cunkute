@@ -1,0 +1,7 @@
+{
+  "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "git.enableSmartCommit": true,
+}

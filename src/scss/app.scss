@@ -1,0 +1,1232 @@
+/**
+ * Project Name: ha-cunkute
+ * Description: Home Assistant with WebSocket by Keite Tran
+ * Creator: Tran Ngoc Anh - VietVbb Team (Keite)
+ * Email: mr.ngocanhtran.com@gmail.com
+ * HomePage: https://facebook.com/mr.ngocanhtran
+ */
+
+// Load bootstrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+// Load core
+@import "core/bootstrap_variables";
+@import "core/variables";
+@import "core/mixins";
+@import "core/functions";
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: $textColor;
+  font-style: normal;
+  font-weight: 500;
+  background-color: #E9ECEF;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+* {
+  outline: none !important;
+}
+
+* {
+  outline: none;
+  text-decoration: none !important;
+}
+
+a {
+  color: $textColor;
+  &:active {
+    text-decoration: none !important;
+  }
+}
+
+.white {
+  color: $white;
+}
+
+.red {
+  color: $red;
+}
+
+.red-100 {
+  color: $red-100;
+}
+
+.green {
+  color: $green;
+}
+
+.blue {
+  color: $blue;
+}
+
+.indigo {
+  color: $indigo;
+}
+
+.purple {
+  color: $purple;
+}
+
+.pink {
+  color: $pink;
+}
+
+.orange {
+  color: $orange;
+}
+
+.teal {
+  color: $teal;
+}
+
+.cyan {
+  color: $cyan;
+}
+
+.bg-red {
+  background: $red;
+}
+
+.bg-red-100 {
+  background: $red-100;
+}
+
+.bg-green {
+  background: $green;
+}
+
+.bg-blue {
+  background: $blue;
+}
+
+.bg-indigo {
+  background: $indigo;
+}
+
+.bg-purple {
+  background: $purple;
+}
+
+.bg-pink {
+  background: $pink;
+}
+
+.bg-orange {
+  background: $orange;
+}
+
+.bg-teal {
+  background: $teal;
+}
+
+.bg-cyan {
+  background: $cyan;
+}
+
+.pd0 {
+  padding: 0 !important;
+}
+
+.hidden {
+  display: none;
+}
+
+// Bootstrap Fix
+// --------------------------------
+.alert-dismissible .close {
+  top: -4px;
+  right: 0;
+  padding: 0;
+}
+
+.alert {
+  margin-bottom: 10px;
+  font-size: 10pt;
+  padding: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.tooltip.custom {
+  .tooltip-inner {
+    font-size: 9pt;
+    padding: 0px 5px 1px 5px;
+    background-color: $gray-700;
+  }
+  .arrow:before {
+    border-bottom-color: $gray-700;
+  }
+}
+
+.border-right-1 {
+  border-right: 1px solid $border-color;
+}
+
+.border-bottom-1 {
+  border-bottom: 1px solid $border-color;
+}
+
+.border-top-1 {
+  border-top: 1px solid $border-color;
+}
+
+.modal-open .modal.modal-center {
+  align-items: center !important;
+  .modal-dialog {
+    flex-grow: 1;
+  }
+}
+
+.btn:not([disabled]):not(.disabled).active,
+.btn:not([disabled]):not(.disabled):active,
+.show>.btn.dropdown-toggle {
+  box-shadow: none;
+}
+
+// Web app
+// --------------------------------
+.iosStatusBar {
+  height: 0;
+}
+
+.iosShowStatusBar {
+  .iosStatusBar {
+    height: 15pt;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: #7077ea;
+  }
+  .app-top-ptr {
+    top: 15pt;
+    margin-bottom: 15pt;
+    position: relative;
+  }
+}
+
+// App background
+// --------------------------------
+app-bg {
+  display: none;
+  width: 100%;
+  position: absolute;
+  height: 140px;
+  z-index: -1;
+  background: linear-gradient(45deg, #fd81b5 0%, #c961f7 50%, #8089ff 100%);
+  .wave {
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    top: 85px;
+    margin-left: 0px;
+    right: 0px;
+    z-index: 10;
+  }
+  .st0 {
+    opacity: 0.35;
+    fill: url(#MyGradient);
+  }
+  .st1 {
+    fill: url(#MyGradient);
+  }
+}
+
+// App header bubble
+// --------------------------------
+.bubble-group {
+  opacity: 0.6;
+  height: 100%;
+  svg {
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    height: 100px;
+    top: 0;
+  }
+  g>* {
+    opacity: 0;
+    @include animation(bubbleAnimLeft 3s cubic-bezier(0, 0, 0.58, 1) 0s infinite);
+    @for $i from 1 through $bgEllipseNum {
+      &:nth-child(#{$i}) {
+        @include animation-delay(#{randomNum()}s);
+      }
+    }
+  }
+}
+
+@include keyframes("bubbleAnimLeft") {
+  0% {
+    opacity: 0;
+    @include transform(translate(20px, 20px));
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    @include transform(translate(-5px, -5px));
+  }
+}
+
+// Nav header
+// --------------------------------
+nav-header {
+  text-align: left;
+  font-size: 16pt;
+  line-height: 16pt;
+  margin: 0;
+  padding: 1rem 1rem 0 1rem;
+  color: $white;
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-up(sm) {
+    padding-top: .3rem;
+  }
+  .navLogo {
+    @include media-breakpoint-up(sm) {
+      margin-top: 4px;
+    }
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .navTitle {
+    padding: 0;
+    padding-top: .5rem;
+    a {
+      color: $white;
+      text-transform: uppercase;
+      margin-left: 8px;
+    }
+  }
+  .navDatetime {
+    text-align: center;
+    .time {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+    }
+    .day {
+      font-size: .8rem;
+    }
+  }
+}
+
+// Toggle checkbox
+// --------------------------------
+$chk-toggle-width: 24px;
+$chk-toggle-height: 22px;
+.chk-toggle {
+  margin-bottom: 0;
+  input.chk-input {
+    position: absolute;
+    visibility: hidden;
+    &+span.chk-round {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      margin-bottom: 0;
+      margin-top: 2px;
+      z-index: 2;
+      padding: 2px;
+      width: $chk-toggle-width * 2;
+      height: $chk-toggle-height;
+      background-color: $gray-400;
+      border-radius: $chk-toggle-width;
+      @include transition(background 0.4s);
+      &:before,
+      &:after {
+        display: block;
+        position: absolute;
+      }
+      &:before {
+        top: 1px;
+        left: 1px;
+        bottom: 1px;
+        right: 1px;
+        background-color: $gray-100;
+        text-indent: $chk-toggle-width - 3px;
+        content: "OFF";
+        font-size: 0.7rem;
+        line-height: $chk-toggle-height - 2px;
+        border-radius: $chk-toggle-width;
+        @include transition(background 0.5s);
+      }
+      &:after {
+        top: 3px;
+        left: 4px;
+        bottom: 3px;
+        width: $chk-toggle-width - 8px;
+        background-color: $gray-400;
+        content: "";
+        border-radius: 100%;
+        @include transition(margin 0.5s, background 0.5s);
+      }
+    } // Checked
+    &:checked {
+      &+span {
+        @include background-gradient-left-to-right($appBgColor1, $appBgColor2);
+      }
+      &+span:after {
+        margin-left: $chk-toggle-width;
+        @include background-gradient-left-to-right($appBgColor1, $appBgColor2);
+      }
+      &+span:before {
+        text-indent: 5px;
+        content: "ON";
+        color: $btnColor;
+      }
+    }
+  }
+}
+
+// App loadding modal
+// --------------------------------
+loading-modal {
+  .modal-dialog {
+    .modal-content {
+      display: flex;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      .modal-body {
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        span.text {
+          font-size: 9pt;
+          margin: 0 10px 0 5px;
+          max-width: 145px;
+          text-align: left;
+        }
+        .svg {
+          display: flex;
+          margin: 5px;
+        }
+        .loadding {
+          width: 35px;
+          height: 35px;
+          circle {
+            stroke-width: 5;
+            stroke-linecap: 'round';
+            fill-opacity: 0;
+            &:first-child {
+              stroke: $green;
+            }
+            &:last-child {
+              stroke: $gray-500;
+            }
+          }
+        }
+      }
+    }
+    path {
+      fill: $teal;
+    }
+  }
+}
+
+login-modal {
+  .modal-dialog {
+    width: 60%;
+    .modal-content {
+      margin: 0 auto;
+      text-align: center;
+      .modal-body {
+        label {
+          text-transform: uppercase;
+          font-size: 1.1rem;
+        }
+        .avatar {
+          font-size: 3.5rem;
+          background-color: rgba(0, 173, 169, 0.68);
+          color: #fff;
+          padding: 10px;
+          width: 100px;
+          height: 100px;
+          display: flex;
+          border-radius: 5px;
+          justify-content: center;
+          align-content: center;
+          margin-left: auto;
+          margin-right: auto;
+          svg {
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Detail modal
+// --------------------------------
+.deviceDetailModal {
+  top: auto;
+  bottom: 0;
+  &.fade2 {
+    opacity: 0;
+    @include transform(scale(0.9));
+    @include transition(all .2s linear);
+    &.show {
+      opacity: 1;
+      @include transform(scale(1));
+    }
+  } // modal content
+  .modal-dialog {
+    bottom: 0;
+    .modal-content {
+      border: 0 solid $white;
+      .btn-primary {
+        border-color: $appBgColor1;
+        @include background-gradient-left-to-right($appBgColor1, $appBgColor2);
+      }
+      .modal-header {
+        padding: 8px 0 2px 0;
+        background: #00ada9;
+        .dt-text {
+          color: $white;
+          font-size: 1.4rem;
+          text-transform: uppercase;
+        }
+        .dt-icon {
+          width: auto;
+          margin-right: 10px;
+          margin-top: 0;
+          $chk-toggle-width: 26px;
+          $chk-toggle-height: 26px;
+          .chk-toggle {
+            margin-bottom: 0;
+            input.chk-input {
+              &+span.chk-round {
+                width: $chk-toggle-width * 2;
+                height: $chk-toggle-height;
+                background-color: #019894;
+                @include border-radius($chk-toggle-width);
+                &:before {
+                  top: 1px;
+                  left: 1px;
+                  bottom: 1px;
+                  right: 1px;
+                  background-color: $gray-100;
+                  text-indent: 24px;
+                  content: "OFF";
+                  font-size: 0.7rem;
+                  line-height: $chk-toggle-height - 2px;
+                  @include border-radius($chk-toggle-width);
+                }
+                &:after {
+                  top: 3px;
+                  left: 4px;
+                  bottom: 3px;
+                  width: $chk-toggle-width - 8px;
+                  background-color: $gray-400;
+                  content: "";
+                  @include border-radius(100%);
+                }
+              } // Checked
+              &:checked {
+                &+span {
+                  background: #019894;
+                }
+                &+span:after {
+                  margin-left: $chk-toggle-width;
+                  background: #019894;
+                }
+                &+span:before {
+                  text-indent: 9px;
+                  content: "ON";
+                  color: $btnColor;
+                }
+              }
+            }
+          }
+        }
+      }
+      .modal-body {
+        padding: 8px 15px 0px;
+        .grayPanel {
+          position: absolute;
+          width: 100%;
+          background: rgba($gray-200, 0.5);
+          height: 74%;
+          margin-left: -15px;
+          z-index: 111;
+          .alert {
+            border-radius: 0;
+            padding: 3px 5px;
+          }
+        }
+        .chk-toggle input.chk-input+span.chk-round:before {
+          text-indent: 15px;
+        }
+        .chk-toggle input.chk-input:checked+span:before {
+          text-indent: -15px;
+        }
+        label {
+          margin-bottom: 5px;
+          text-transform: uppercase;
+          font-size: 0.7rem;
+          font-weight: normal;
+          display: block;
+        }
+      }
+      .modal-footer {
+        padding: 0;
+        border: 0;
+        >div {
+          padding: 0;
+          .btn {
+            border: 0;
+            padding: 0.5rem 0;
+            text-transform: uppercase;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+          }
+        }
+      }
+    }
+  }
+  .input-group-btn>.btn {
+    border: 1px solid $appBgColor1;
+  } // Modal item
+  .dt-title {
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    .dt-text {
+      color: $mainColor;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+    .dt-icon {
+      width: auto;
+      margin-right: 10px;
+      margin-top: 3px;
+      input.cmn-toggle-round-flat:checked+label:before {
+        text-indent: 6px;
+      }
+      input.cmn-toggle-round-flat+label:before {
+        text-indent: 21px;
+      }
+    }
+  }
+  span.title {
+    margin-top: -3px;
+    margin-left: 10px;
+    font-weight: normal;
+  }
+  input[type=time] {
+    border: 0;
+    padding: 0;
+    line-height: 12px;
+    height: 10px;
+  }
+  .dt-content {
+    .slider {
+      .slider-track {
+        background: $gray-200;
+        box-shadow: none;
+        .slider-selection {
+          background: $appBgColor1;
+          box-shadow: none;
+        }
+      }
+      .slider-handle {
+        @include background-gradient-left-to-right($appBgColor1, $appBgColor2);
+        &::before {
+          content: "";
+          position: absolute;
+          background: $white;
+          width: 10px;
+          height: 10px;
+          border-radius: 100%;
+          top: 5px;
+          left: 5px;
+        }
+      }
+      &.slider-horizontal {
+        width: 100%;
+      }
+    }
+    .range-slider {
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+  .knobCtr {
+    text-align: center;
+    label {
+      margin-top: -30px;
+      left: 33px;
+      font-size: 0.5rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.topWidget {
+  padding: 0 0 0 1rem;
+  margin-bottom: 0; //box-shadow: 2px 4px 20px -4px rgba(0, 0, 0, .1);
+  color: #fff;
+  border-top: 1px solid rgba($gray-100, 0.1);
+  border-bottom: 1px solid #2a986a;
+  @include background-gradient-left-to-right($appBgColor1, $appBgColor2);
+  @include media-breakpoint-up(sm) {
+    padding: 0.5rem 0 0 .5rem;
+  }
+  span.icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    vertical-align: middle;
+    display: flex;
+    background: $green;
+    margin-right: 8px;
+    border-radius: 5px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    &.yellow {
+      background-color: $yellow;
+      color: $white;
+    }
+    &.green {
+      background-color: $green;
+      color: $white;
+    }
+    &.red {
+      background-color: $red;
+      color: $white;
+    }
+  }
+  .text {
+    float: left;
+    font-size: .7rem;
+    font-weight: 400;
+    display: block;
+    margin-right: 10px;
+  }
+  .value {
+    float: left;
+    font-size: 0.8rem;
+    margin-top: -3px;
+    margin-right: 10px;
+    width: 50%;
+  }
+}
+
+.topWidgetDetail {
+  background: $gray-200;
+  display: none;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid $gray-200;
+    top: -5px;
+  }
+  &.lv1:before {
+    left: 16.666665%;
+  }
+  &.lv2:before {
+    left: 49.999995%;
+  }
+  &.lv3:before {
+    left: 83.333327%;
+  }
+}
+
+// Index page
+// --------------------------------
+.container-fluid {
+  padding: 0;
+}
+
+.mainpage {
+  margin-right: 0;
+  margin-left: 0;
+  height: 100%;
+  padding: 3px;
+  .item {
+    padding: 5px;
+    .block {
+      background-color: rgba(252, 252, 252, 1);
+      border: 0px solid rgba(2, 93, 150, 1);
+      padding: 8px 8px 0px 8px;
+      border-radius: 5px;
+      box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035), 0 7px 18px rgba(0, 9, 128, 0.05);
+      .disabledPanel {
+        display: none;
+      }
+      &.disabled {
+        opacity: 0.5;
+        .disabledPanel {
+          display: flex;
+          color: $red-100;
+          font-size: 2rem;
+          position: absolute;
+          width: auto;
+          height: auto;
+          z-index: 3;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          svg {
+            padding: 5px;
+            border-radius: 5px;
+          }
+        }
+      }
+      .row>.icon {
+        text-align: center;
+        width: 45px;
+        height: 45px;
+        padding: 8px;
+        border-radius: 5px;
+        background-color: rgba(20, 48, 95, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        font-size: 28px;
+        img {
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+        svg.feather {
+          width: 29px;
+          height: 29px;
+        }
+        i.fa {
+          font-size: 35px;
+        }
+        .bg-info {
+          background-color: #219fb7;
+        }
+        $bgOpacity: 0.2;
+        &.teal {
+          background-color: rgba($teal, $bgOpacity);
+          color: $teal;
+        }
+        &.yellow {
+          background-color: rgba($yellow, $bgOpacity);
+          color: $yellow;
+        }
+        &.green {
+          background-color: rgba($green, $bgOpacity);
+          color: $green;
+        }
+        &.purple {
+          background-color: rgba($purple, $bgOpacity);
+          color: $purple;
+        }
+        &.cyan {
+          background-color: rgba($cyan, $bgOpacity);
+          color: $cyan;
+        }
+        &.pink {
+          background-color: rgba($pink, $bgOpacity);
+          color: $pink;
+        }
+        &.red {
+          background-color: rgba($red, $bgOpacity);
+          color: $red;
+        }
+      }
+      .chk-toggle {
+        float: right;
+      }
+      .title {
+        display: none;
+        color: $textColor;
+        text-transform: uppercase;
+        text-shadow: 0px 0px 2px rgba($white, 0.5);
+        font-size: .8rem;
+        background-color: transparent;
+        margin: 0 -8px;
+        padding: 3px 8px;
+        @include border-radius-separate(0, 0, 5px, 5px);
+      }
+    }
+    &.camera {
+      .block {
+        background-color: $white;
+        display: inline-flex;
+        vertical-align: middle;
+      }
+      img {
+        margin-top: 20px;
+        width: 100%;
+        height: 90px;
+        @include media-breakpoint-up(sm) {
+          width: 159px;
+          height: 89px;
+        }
+      }
+    }
+    .itemTitle {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      width: 100%;
+      float: right;
+      text-align: right;
+      color: $textColor;
+      text-transform: uppercase;
+      text-shadow: 0px 0px 2px rgba($white, 0.5);
+      font-size: .8rem;
+    }
+    .chk-toggle {
+      float: right;
+    }
+    .decBlock {
+      z-index: 1;
+      float: right;
+      margin-right: 5px;
+      .decIcon {
+        float: right;
+        margin-top: 0px;
+        margin-right: 3px;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .decText {
+        margin-top: 6px;
+        float: left;
+        font-size: 0.6rem;
+        line-height: 0.6rem;
+        font-weight: normal;
+        text-align: right;
+        color: $white;
+        &.badge-info {
+          @include background-gradient-left-to-right($appBgColor1, $appBgColor2);
+        }
+      }
+    }
+  }
+}
+
+// Air conditioner modal
+// --------------------------------
+aircon-modal {
+  .airConditionerMode {
+    margin-right: -10px;
+    margin-left: -10px;
+    padding: 0 10px;
+    .block {
+      font-weight: bold;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      text-align: center;
+      background-color: $gray-100;
+      width: 100%;
+      float: left;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      padding: 6px 15px;
+      &.active {
+        background-color: $gray-200;
+      }
+      i {
+        font-size: 1rem;
+        margin-right: 10px;
+        float: left;
+      }
+      span {
+        display: block;
+        float: left;
+      }
+    }
+  }
+}
+
+@include keyframes("rotating") {
+  from {
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+
+.rotating {
+  @include animation(rotating 2s linear infinite backwards);
+}
+
+// Weather widget 
+// --------------------------------
+weather-widget {
+  height: 52px;
+  display: block;
+  margin-bottom: 10px;
+  text-shadow: 0px 0px 2px rgba(150, 150, 150, .6);
+  .no-gutters {
+    color: $white;
+  }
+  .tday {
+    padding: 0;
+    .text {
+      padding: 0 5px;
+      font-size: .9rem;
+      display: block;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      @include media-breakpoint-up(sm) {
+        margin-bottom: 0;
+      }
+    }
+    .d-none {
+      small {
+        display: block;
+      }
+      svg {
+        width: 70px;
+      }
+    }
+    .wi {
+      font-size: 2.5rem;
+      margin-right: .5rem;
+    }
+    .temp {
+      font-size: 1.6rem;
+    }
+  }
+  .wday {
+    padding: .3rem .5rem 0 .5rem;
+    min-width: 45px;
+    @include media-breakpoint-up(sm) {
+      margin-right: -1px;
+    }
+    span {
+      float: left;
+      width: 100%;
+      text-align: center;
+      font-size: .8rem;
+      margin: 0;
+      &.icon i {
+        font-size: 1rem;
+      }
+      &.date {
+        background: rgba(93, 132, 171, 0.2);
+        font-size: .7rem;
+        margin-bottom: .5rem;
+        padding: 0;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+// Toast plugin custom
+// --------------------------------
+#toast-container {
+  &>div {
+    box-shadow: none;
+    opacity: 1;
+    font-size: 0.8rem;
+    background-image: none !important;
+    padding: 8px;
+    @include media-breakpoint-up(sm) {
+      padding: 8px;
+      width: 18em;
+    }
+  }
+  &:hover {
+    box-shadow: none;
+  }
+  &>.toast-info {
+    background-image: none !important;
+  }
+  &>.toast-error {
+    background-image: none !important;
+  }
+  &>.toast-success {
+    background-image: none !important;
+  }
+  &>.toast-warning {
+    background-image: none !important;
+  }
+  .toast-close-button {
+    right: .1rem;
+    top: -.4em;
+  }
+}
+
+// Sensor widget
+// --------------------------------
+sensor-detail-widget {
+  .block {
+    padding: 0;
+    margin: 0px;
+    border-radius: 0px;
+    background: linear-gradient(360deg, #ba98da 0%, #fd81b5 100%);
+    box-shadow: 0 5px 10px rgba(0, 9, 128, .035), 0 7px 18px rgba(0, 9, 128, .05);
+  }
+  .iconList {
+    color: #fff;
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+    >div {
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      border-bottom: 1px solid rgba($black, 0.05);
+      &.active {
+        border-bottom-color: transparent;
+        border-right: 1px solid rgba($black, 0.05);
+        border-left: 1px solid rgba($black, 0.05);
+        &:first-child {
+          border-left: 0;
+        }
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+    span.icon {
+      display: block;
+      text-align: center;
+      i {
+        font-size: 16px;
+        line-height: 35px;
+        cursor: pointer;
+      }
+      span.value {
+        line-height: 35px;
+        font-size: 0.7rem;
+        top: 0px;
+        color: #fff;
+        padding: 0 3px;
+        border-radius: 5px;
+      }
+      &.active::after {
+        position: absolute;
+        width: 0;
+        height: 0;
+        margin-top: 2px;
+        content: "";
+        border-bottom: .5em solid;
+        border-right: .5em solid transparent;
+        border-top: 0;
+        border-left: .5em solid transparent;
+      }
+    }
+  }
+  .topWidgetChart {
+    height: 100px;
+    margin-top: -2px;
+    canvas {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}
+
+.modal.modal-center.show {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+  .modal-dialog {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+}
+
+main-light-modal {
+  .btnLightBrightnessDown:active,
+  .btnLightBrightnessUp:active {
+    color: #00ada9;
+  }
+  .lightBrightness {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    font-size: 0.7rem !important;
+  }
+}
+
+.dynamicsparkline {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+info-widget.mainpage {
+  background-color: #fd80b5;
+  .item .block {
+    box-shadow: none;
+    background: none;
+    .row>.icon {
+      background-color: #2daae1;
+      color: #fff;
+      height: 50px;
+      font-size: 25px;
+      padding: 0;
+      &.disabled {
+        opacity: 0.6;
+      }
+      span {
+        font-size: 10px;
+        white-space: nowrap;
+        float: left;
+        margin-top: 4px;
+        margin-bottom: -4px;
+        padding: 1px 0;
+        width: 100%;
+        border-bottom-left-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.26);
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+}

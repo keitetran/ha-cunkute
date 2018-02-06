@@ -1,0 +1,145 @@
+/**
+ * Project Name: ha-cunkute
+ * Description: Home Assistant with WebSocket by Keite Tran
+ * Creator: Tran Ngoc Anh - VietVbb Team (Keite)
+ * Email: mr.ngocanhtran.com@gmail.com
+ * HomePage: https://facebook.com/mr.ngocanhtran
+ */
+
+/* Checkbox */
+
+.ckbox {
+	font-weight: normal;
+	position: relative;
+	display: block;
+	line-height: 18px;
+	span {
+		padding-left: 6px;
+		&:empty {
+			float: left;
+		}
+		&:before,
+		&:after {
+			line-height: 18px;
+			position: absolute;
+		}
+		&:before {
+			content: '';
+			width: 16px;
+			height: 16px;
+			background-color: #fff;
+			border: 1px solid #adb5bd;
+			border-radius: 2px;
+			top: 1px;
+			left: 0;
+		}
+		&:after {
+			top: 1px;
+			left: 0;
+			width: 16px;
+			height: 16px;
+			content: '\f00c';
+			font-family: 'FontAwesome';
+			font-size: 9px;
+			text-align: center;
+			color: #fff;
+			background-color: #17a2b8;
+			line-height: 17px;
+			border-radius: 2px;
+			display: none;
+		}
+	}
+	&.list-group-item span {
+		&:before,
+		&:after {
+			top: 13px;
+			left: 9px;
+		}
+	}
+	input[type='checkbox'] {
+		opacity: 0;
+		margin: 0 5px 0 0;
+		&:checked+span:after {
+			display: block;
+		}
+		&:focus+span:before {
+			border-color: #80bdff;
+			outline: 0;
+			box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+		}
+		&[disabled]+span {
+			opacity: .75;
+			&:before,
+			&:after {
+				opacity: .75;
+			}
+		}
+	}
+}
+
+.ckbox-inline {
+	display: inline-block;
+}
+
+/* Radio Box */
+
+.rdiobox {
+	font-weight: normal;
+	position: relative;
+	line-height: 18px;
+	span {
+		padding-left: 6px;
+		&:before,
+		&:after {
+			line-height: 18px;
+			position: absolute;
+		}
+		&:before {
+			content: '';
+			width: 16px;
+			height: 16px;
+			background-color: #fff;
+			border: 1px solid #adb5bd;
+			border-radius: 50px;
+			top: 2px;
+			left: 0;
+		}
+		&:after {
+			content: '';
+			width: 6px;
+			height: 6px;
+			background-color: #fff;
+			border-radius: 50px;
+			top: 7px;
+			left: 5px;
+			display: none;
+		}
+	}
+	input[type='radio'] {
+		opacity: 0;
+		margin: 0 5px 0 0;
+		&:checked+span:before {
+			border-color: transparent;
+			background-color: #17a2b8;
+		}
+		&:focus+span:before {
+			border-color: #80bdff;
+			outline: 0;
+			box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+		}
+		&:checked+span:after {
+			display: block;
+		}
+		&[disabled]+span {
+			opacity: .75;
+			&:before,
+			&:after {
+				opacity: .75;
+			}
+		}
+	}
+}
+
+.rdiobox-inline {
+	display: inline-block;
+}

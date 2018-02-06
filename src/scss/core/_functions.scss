@@ -1,0 +1,15 @@
+/**
+ * Project Name: ha-cunkute
+ * Description: Home Assistant with WebSocket by Keite Tran
+ * Creator: Tran Ngoc Anh - VietVbb Team (Keite)
+ * Email: mr.ngocanhtran.com@gmail.com
+ * HomePage: https://facebook.com/mr.ngocanhtran
+ */
+
+// Function random time 
+// ------------------------------
+@function randomNum() {
+  $rand: random();
+  $randomNum: 2 + $rand * ((5 - 2) + 1);
+  @return $randomNum;
+}

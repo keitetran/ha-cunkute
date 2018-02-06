@@ -1,0 +1,16 @@
+{
+  "name": "見守りシステム",
+  "start_url": "index.php",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "aliceblue",
+  "background_color": "#f1f8ff",
+  "icons": [
+    {
+      "src": "android-touch-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": 4.0
+    }
+  ]
+}

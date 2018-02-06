@@ -1,0 +1,25 @@
+/**
+ * Project Name: ha-cunkute
+ * Description: Home Assistant with WebSocket by Keite Tran
+ * Creator: Tran Ngoc Anh - VietVbb Team (Keite)
+ * Email: mr.ngocanhtran.com@gmail.com
+ * HomePage: https://facebook.com/mr.ngocanhtran
+ */
+
+@mixin animation-all($name: 'animation-name', $duration: 5s, $count: 3) {
+  -webkit-animation: $name $duration $count;
+  -khtml-animation: $name $duration $count;
+  -moz-animation: $name $duration $count;
+  -ms-animation: $name $duration $count;
+  -o-animation: $name $duration $count;
+  animation: $name $duration $count;
+}
+
+@mixin animation-delay($time: 0s) {
+  -webkit-animation-delay: $time;
+  -khtml-animation: $time;
+  -moz-animation-delay: $time;
+  -ms-animation-delay: $time;
+  -o-animation-delay: $time;
+  animation-delay: $time;
+}

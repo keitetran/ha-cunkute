@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	@@include('views/head.html')
+</head>
+
+<body>
+	@@include('views/app-bg.html')
+	<main-page class="container-fluid">
+		<nav-header class="row m-0">
+			<div class="navLogo">
+				<a class="float-left" href="/">
+					<img src="assets/svg/ki-home.svg" />
+				</a>
+			</div>
+			<div class="col navTitle">
+				<a href="/" class="title text-nowrap">Nhà của Cún Cute</a>
+			</div>
+			<div class="navDatetime">
+				<div class="time">12:00</div>
+				<div class="day">2017/11/20</div>
+			</div>
+		</nav-header>
+		<div class="row no-gutters">
+			<weather-widget class="col-12 col-sm-6 item">
+				<div class="row no-gutters">
+					<div class="col-12 tday"></div>
+				</div>
+			</weather-widget>
+			<sensor-detail-widget class="col-12 col-sm-3">
+				<!-- @@include('views/widget/sensor-detail.html') -->
+			</sensor-detail-widget>
+		</div>
+		<!-- Main component -->
+		<info-widget class="row no-gutters mainpage pb-0 pt-2 infoWidget">
+			@@include('views/widget/more-button.html')
+		</info-widget>
+		<div class="row no-gutters mainpage">
+			<!-- start sleepmode control -->
+			<sleepmode-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon teal">
+							<i class="fab fa-earlybirds"></i>
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="input_boolean.system_sleep_mode" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+							<div class="itemTitle">Chế độ ngủ</div>
+						</div>
+					</div>
+				</div>
+			</sleepmode-ctrl>
+			<!-- end sleepmode control -->
+
+			<amply-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled" data-toggle="" data-target="#musicPlayerControlModal">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon cyan">
+							<i class="far fa-play-circle"></i>
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="switch.amply_power" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+							<div class="decBlock">
+								<span class="decText badge badge-info mr-2">30%</span>
+							</div>
+							<div class="itemTitle">Âm thanh</div>
+						</div>
+					</div>
+				</div>
+			</amply-ctrl>
+
+			<pc-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon purple">
+							<i class="fas fa-desktop"></i>
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="device_tracker.pc" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+							<div class="itemTitle">Máy tính</div>
+						</div>
+					</div>
+				</div>
+			</pc-ctrl>
+			<tv-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled" data-toggle="" data-target="#tvControlModal">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon yellow">
+							<i class="fas fa-tv"></i>
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="" data-field="status">
+								<span class="chk-round"></span>
+							</label>
+							<div class="decBlock hidden">
+								<span class="decText badge badge-info">PC</span>
+							</div>
+							<div class="itemTitle">TV</div>
+						</div>
+					</div>
+				</div>
+			</tv-ctrl>
+			<fan-kitchen-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon cyan">
+							<i class="fab fa-cloudversify"></i>
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="fan_kitchen" data-field="status">
+								<span class="chk-round"></span>
+							</label>
+							<div class="itemTitle">Quạt hút mùi</div>
+						</div>
+					</div>
+				</div>
+			</fan-kitchen-ctrl>
+			<aircon-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled" data-toggle="" data-target="aircon-modal">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon ic-main">
+							<img src="assets/svg/air-conditioner.svg">
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="switch.aircon_power_off" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+							<div class="decBlock hidden">
+								<span class="decText badge badge-info">25ºC</span>
+							</div>
+							<div class="itemTitle">Điều hòa</div>
+						</div>
+					</div>
+				</div>
+			</aircon-ctrl>
+			<front-light-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon">
+							<img src="assets/svg/lamp-off.svg">
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="switch.front_light" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+							<div class="itemTitle">Cửa ra vào</div>
+						</div>
+					</div>
+				</div>
+			</front-light-ctrl>
+			<main-light-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled" data-toggle="" data-target="main-light-modal">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon">
+							<img src="assets/svg/chandelier-off.svg">
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="switch.main_light_power" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+							<div class="decBlock">
+								<span class="icon ml-2 hidden">
+									<img width="20" src="assets/svg/lamp.svg">
+								</span>
+								<span class="decText badge badge-info hidden">80%</span>
+							</div>
+							<div class="itemTitle">Phòng chính</div>
+						</div>
+					</div>
+				</div>
+			</main-light-ctrl>
+			<bathroom-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon pink">
+							<i class="fa fa-bath"></i>
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="switch.barthroom_light" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+							<div class="decBlock">
+								<span class="icon text-danger door ml-3 hidden">
+									<i class="fas fa-lock-open"></i>
+								</span>
+								<span class="icon fan ml-2 hidden">
+									<img style="width: 18px; height: 18px;" class="rotating" src="assets/svg/fan2.svg">
+								</span>
+							</div>
+							<div class="itemTitle">Nhà tắm</div>
+						</div>
+					</div>
+				</div>
+			</bathroom-ctrl>
+			<toilet-ctrl class="col-6 col-sm-3 item">
+				<div class="block disabled" data-toggle="" data-target="toilet-modal">
+					<div class="disabledPanel">
+						<i class="fa fa-xxxxxxx"></i>
+					</div>
+					<div class="row no-gutters">
+						<div class="icon">
+							<img src="assets/svg/toilet.svg">
+						</div>
+						<div class="col">
+							<label class="chk-toggle">
+								<input class="chk-input" type="checkbox" data-device="switch.toilet_light" data-field="state">
+								<span class="chk-round"></span>
+							</label>
+							<div class="decBlock">
+								<span class="icon light ml-2 hidden">
+									<img width="20px" src="assets/svg/light.svg">
+								</span>
+								<span class="icon fan ml-2 hidden">
+									<img style="width: 18px; height: 18px;" class="rotating" src="assets/svg/fan2.svg">
+								</span>
+							</div>
+							<div class="itemTitle">Nhà vệ sinh</div>
+						</div>
+					</div>
+				</div>
+			</toilet-ctrl>
+		</div>
+		<!-- end Main component -->
+	</main-page>
+	<main-light-modal class="modal fade2 deviceDetailModal" tabindex="-1" role="dialog">
+		@@include('views/modal/main-light.html')
+	</main-light-modal>
+	<aircon-modal class="modal fade2 deviceDetailModal" tabindex="-1" role="dialog">
+		@@include('views/modal/aircon.html')
+	</aircon-modal>
+	<bathroom-modal class="modal fade2 deviceDetailModal" tabindex="-1" role="dialog">
+		@@include('views/modal/barthroom.html')
+	</bathroom-modal>
+	<toilet-modal class="modal fade2 deviceDetailModal" tabindex="-1" role="dialog">
+		@@include('views/modal/toilet.html')
+	</toilet-modal>
+	<loading-modal class="modal modal-center" tabindex="-1" role="dialog">
+		@@include('views/modal/loading.html')
+	</loading-modal>
+	<login-modal class="modal modal-center" tabindex="-1" role="dialog">
+		@@include('views/modal/login.html')
+	</login-modal>
+	<footer>
+		@@include('views/footer.html')
+	</footer>
+</body>
+
+</html>

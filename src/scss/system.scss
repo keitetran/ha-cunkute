@@ -1,0 +1,65 @@
+/**
+ * Project Name: ha-cunkute
+ * Description: Home Assistant with WebSocket by Keite Tran
+ * Creator: Tran Ngoc Anh - VietVbb Team (Keite)
+ * Email: mr.ngocanhtran.com@gmail.com
+ * HomePage: https://facebook.com/mr.ngocanhtran
+ */
+body.error {
+	background-color: #f8ebe4;
+	.container {
+		position: absolute;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 80%;
+		max-height: 150px;
+		background-color: #ccc;
+		border-radius: 5px;
+	}
+	.btn {
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+	}
+	p {
+		line-height: 22px;
+		font-size: .8rem;
+	}
+}
+
+body.login {
+	.container {
+		position: absolute;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 80%;
+		max-height: 290px;
+		background-color: #fff;
+		border-radius: 5px;
+	}
+	h2 {
+		color: #fff;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		text-transform: uppercase;
+		font-size: 30px;
+	}
+	.form-footer {
+		margin: 0 -15px;
+		position: absolute;
+		width: 100%;
+		padding: 13px;
+		bottom: -10px;
+		background: #fff;
+		border-top: 1px solid #ededee;
+		margin-top: 29px;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+}

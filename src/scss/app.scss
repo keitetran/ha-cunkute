@@ -1203,30 +1203,75 @@ main-light-modal {
 
 info-widget.mainpage {
   background-color: #fd80b5;
-  .item .block {
-    box-shadow: none;
-    background: none;
-    .row>.icon {
-      background-color: #2daae1;
-      color: #fff;
-      height: 50px;
-      font-size: 25px;
-      padding: 0;
-      &.disabled {
-        opacity: 0.6;
+  .item {
+    .block {
+      cursor: pointer;
+      box-shadow: none;
+      background: none;
+      .row>.icon {
+        background-color: #e671d4;
+        color: #fff;
+        height: 50px;
+        font-size: 25px;
+        padding: 0;
+        &.blue {
+          background-color: #2daae1;
+        }
+        &.pink {
+          background-color: #e6007e;
+        }
+        &.yealow {
+          background-color: #f39200;
+        }
+        &.green {
+          background-color: #94c11f;
+        }
+        &.brown {
+          background-color: #936037;
+        }
+        &.purple {
+          background-color: #662483;
+        }
+        span {
+          font-size: 10px;
+          white-space: nowrap;
+          float: left;
+          margin-top: 4px;
+          margin-bottom: -4px;
+          padding: 1px 0;
+          width: 100%;
+          border-bottom-left-radius: 5px;
+          background-color: rgba(0, 0, 0, 0.2);
+          border-bottom-right-radius: 5px;
+        }
       }
-      span {
-        font-size: 10px;
-        white-space: nowrap;
-        float: left;
-        margin-top: 4px;
-        margin-bottom: -4px;
-        padding: 1px 0;
+    }
+    &[data-state=disabled] {
+      opacity: 1;
+      .disabledPanel {
+        display: flex;
+        color: $red-100;
+        font-size: 2rem;
+        position: absolute;
         width: 100%;
-        border-bottom-left-radius: 5px;
-        background-color: rgba(0, 0, 0, 0.26);
-        border-bottom-right-radius: 5px;
+        height: auto;
+        z-index: 3;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        svg {
+          padding: 5px;
+          border-radius: 5px;
+        }
       }
+    }
+    &[data-state=off] {
+      opacity: 0.6;
     }
   }
 }

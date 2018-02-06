@@ -299,6 +299,28 @@
       return e.preventDefault();
     });
 
+    $('info-widget .item').click(function (e) {
+      var entity_id = $(this).attr('data-entity');
+      var state = $(this).attr('data-state');
+
+      // Confirm on sleep mode change
+      if (entity_id === config.entity_id.input_boolean.system_sleep_mode && state === config.const.off) {
+        app.confirm(config.lang.confirm_message).then(function (result) {
+          if (result.value) service.callHaService(entity_id, config.const.on);
+        });
+        return e.preventDefault();
+      }
+
+      // Call service
+      if (state === config.const.on) {
+        service.callHaService(entity_id, config.const.off);
+      }
+
+      if (state === config.const.off) {
+        service.callHaService(entity_id, config.const.on);
+      }
+    });
+
 
   });
 })();

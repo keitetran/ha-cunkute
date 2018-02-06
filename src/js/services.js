@@ -99,6 +99,7 @@ var service = (function () {
       var pcCtrl = $('pc-ctrl');
       var sleepModeCtr = $('sleepmode-ctrl');
       var sensorWidget = $('sensor-detail-widget');
+      var infoWidget = $('info-widget');
 
       switch (device.entity_id) {
         case config.entity_id.sensor.dht_sensor_temperature: // Update sensor temperature
@@ -121,6 +122,9 @@ var service = (function () {
           app.log('Updated state: ' + device.entity_id + ' ' + device.state);
           service.updateHtmlSwithByEntityId(device.entity_id, device.state);
           sleepModeCtr.find('.block').removeClass('disabled');
+
+          infoWidget.find('div.item[data-entity="' + config.entity_id.input_boolean.system_sleep_mode + '"]').attr('data-state', device.state);
+
           break;
 
         case config.entity_id.switch.front_light: // Front light

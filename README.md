@@ -1,5 +1,5 @@
 
-# Nhà của CúnKute. Hãy comit vì cộng đồng nhé #
+# Nhà của CúnKute.
 
 HA-config https://github.com/keitetran/ha-config
 

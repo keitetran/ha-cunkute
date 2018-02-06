@@ -129,7 +129,7 @@ gulp.task('default', function (callback) {
 	gulp.watch(['src/scss/*'], ['scss']);
 	gulp.watch(['src/img/**/*'], ['images']);
 	gulp.watch(['src/js/**/*'], ['javascript']);
-	gulp.watch(['src/*.html', 'src/views/**/*.html'], ['html']);
+	gulp.watch(['src/**/*.html'], ['html']);
 
 	// Push event reload to browser
 	gulp.on('change', browserSync.reload);

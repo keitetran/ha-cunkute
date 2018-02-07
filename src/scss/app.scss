@@ -1275,3 +1275,49 @@ info-widget.mainpage {
     }
   }
 }
+
+setting-modal {
+  .list-group {
+    .list-group-item {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      .icon {
+        margin: 0;
+        padding: 5px 10px;
+        font-size: 25px;
+        width: 57px;
+        text-align: center;
+        color: #019894;
+        border-right: 1px solid rgba(0, 0, 0, .05);
+      }
+      .text {
+        text-align: center;
+        text-indent: 10px;
+      }
+      .chk-toggle {
+        margin-left: auto;
+        margin-bottom: 0 !important;
+        margin-right: 10px;
+        .chk-round {
+          &:before {
+            text-indent: 20px !important;
+          }
+        }
+      }
+      .btn-group {
+        margin-right: 0;
+      }
+      &:first-child {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: 0;
+      }
+      &:last-child {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+}

@@ -36,7 +36,7 @@ var config = (function () {
         // main_light_power: 'input_boolean.people_in_toilet',
         main_light_sleep: 'switch.main_light_sleep',
         main_light_brightness: 'switch.main_light_brightness',
-        amply_power: 'switch.amply_power',
+        amply_power: 'input_boolean.people_in_toilet',
         toilet_light: 'switch.toilet_light',
         toilet_fan: 'switch.toilet_fan',
         barthroom_light: 'switch.barthroom_light',

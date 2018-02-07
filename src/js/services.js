@@ -104,12 +104,14 @@ var service = (function () {
       switch (device.entity_id) {
         case config.entity_id.sensor.dht_sensor_temperature: // Update sensor temperature
           app.log('Updated state: ' + device.entity_id + ' ' + device.state);
-          sensorWidget.find('.temperature .value').html(device.state + 'ºC');
+          infoWidget.find('div.item[data-entity="' + config.entity_id.sensor.dht_sensor_temperature + '"]')
+            .attr("data-state", '').find("span").html(device.state + "°C");
           break;
 
         case config.entity_id.sensor.dht_sensor_humidity: // Update sensor humidity
           app.log('Updated state: ' + device.entity_id + ' ' + device.state);
-          sensorWidget.find('.humidity .value').html(device.state + '%');
+          infoWidget.find('div.item[data-entity="' + config.entity_id.sensor.dht_sensor_humidity + '"]')
+            .attr("data-state", '').find("span").html(device.state + "%");
           break;
 
         case config.entity_id.device_tracker.pc: // Track PC state  
@@ -126,6 +128,13 @@ var service = (function () {
           infoWidget.find('div.item[data-entity="' + config.entity_id.input_boolean.system_sleep_mode + '"]').attr('data-state', device.state);
 
           break;
+
+
+        case config.entity_id.input_boolean.system_goout_mode: // Go out mode
+          app.log('Updated state: ' + device.entity_id + ' ' + device.state);
+          infoWidget.find('div.item[data-entity="' + config.entity_id.input_boolean.system_goout_mode + '"]').attr('data-state', device.state);
+          break;
+
 
         case config.entity_id.switch.front_light: // Front light
           app.log('Updated state: ' + device.entity_id + ' ' + device.state);

@@ -60,7 +60,7 @@
 			<!-- end sleepmode control -->
 
 			<amply-ctrl class="col-6 col-sm-3 item">
-				<div class="block disabled" data-toggle="" data-target="#musicPlayerControlModal">
+				<div class="block disabled" data-toggle="" data-target="amply-modal">
 					<div class="disabledPanel">
 						<i class="fa fa-xxxxxxx"></i>
 					</div>
@@ -73,7 +73,7 @@
 								<input class="chk-input" type="checkbox" data-device="switch.amply_power" data-field="state">
 								<span class="chk-round"></span>
 							</label>
-							<div class="decBlock">
+							<div class="decBlock hidden">
 								<span class="decText badge badge-info mr-2">30%</span>
 							</div>
 							<div class="itemTitle">Âm thanh</div>
@@ -283,6 +283,12 @@
 	<login-modal class="modal modal-center" tabindex="-1" role="dialog">
 		@@include('views/modal/login.html')
 	</login-modal>
+	<setting-modal class="modal deviceDetailModal" tabindex="-1" role="dialog">
+		@@include('views/modal/settings.html')
+	</setting-modal>
+	<amply-modal class="modal fade2 deviceDetailModal" tabindex="-1" role="dialog">
+		@@include('views/modal/amply.html')
+	</amply-modal>
 	<footer>
 		@@include('views/footer.html')
 	</footer>

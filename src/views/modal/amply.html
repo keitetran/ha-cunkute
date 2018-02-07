@@ -1,0 +1,72 @@
+<!--Air conditioner control modal-->
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<div class="col dt-text">Âm thanh</div>
+			<div class="dt-icon">
+				<label class="chk-toggle">
+					<input class="chk-input" type="checkbox" data-device="switch.amply_power" data-field="state">
+					<span class="chk-round"></span>
+				</label>
+			</div>
+		</div>
+		<div class="modal-body pt-0">
+			<div class="grayPanel" style="height: 100%;">
+				<div class="alert alert-warning"></div>
+			</div>
+			<div class="row pd-0 mg-0">
+				<div class="col-6 col-sm-3 pt-2 pb-2 border-right-1 mainLightMotionSensor">
+					<label>Âm lượng:</label>
+					<div class="row">
+						<div class="col-3 text-center">
+							<i class="fas fa-volume-off orange" style="font-size: 25px;"></i>
+						</div>
+						<div class="col-9 text-center">
+							<div class="input-group input-group-sm">
+								<div class="input-group-prepend">
+									<button class="btn btn-secondary btnAmplyVolume Down" data-device="input_boolean.system_sleep_mode" data-field="state">
+										<i class="fas fa-caret-down"></i>
+									</button>
+								</div>
+								<input type="text" class="form-control text-center txtAmplyVolume" value="20" disabled>
+								<div class="input-group-append">
+									<button class="btn btn-secondary btnAmplyVolume Up">
+										<i class="fas fa-caret-up"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 pt-2 mainLightSleepMode">
+					<label class="pb-1">Thiết bị đầu vào:</label>
+					<div class="row">
+						<div class="col-3 text-center">
+							<i class="fas fa-plug orange" style="font-size: 25px;"></i>
+						</div>
+						<div class="col-9 text-center">
+							<div class="input-group input-group-sm">
+								<div class="input-group-prepend">
+									<button class="btn btn-secondary btnAmplyInput Left" data-device="input_boolean.system_sleep_mode" data-field="state">
+										<i class="fas fa-caret-left"></i>
+									</button>
+								</div>
+								<input type="text" class="form-control text-center txtAmplyInput" value="HDMI" disabled>
+								<div class="input-group-append">
+									<button class="btn btn-secondary btnAmplyInput Right">
+										<i class="fas fa-caret-right"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="col-12">
+				<button class="btn btn-block btn-lg btn-primary" data-dismiss="modal">Hoàn tất cài đặt</button>
+			</div>
+		</div>
+	</div>
+</div>

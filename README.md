@@ -17,4 +17,5 @@
 - Module điều khiển đèn 
 - Module điều khiển dàn âm thanh
 - Module điều khiển điều hòa
+- Module cài đặt hệ thống
 - Lấy dữ liệu sensor ra widget 
